@@ -38,7 +38,7 @@ jobs:
           name: dist
           path: |
             dist/qorescan_*_checksums.txt
-            dist/qorescan_*_*_*
+            dist/qorescan_linux_amd64_v1/qorescan
 
   wrappers:
     needs: [binaries]
@@ -59,10 +59,16 @@ jobs:
         run: |
           version="${GITHUB_REF_NAME#v}"
           python scripts/wrapper-checksums.py "dist/qorescan_${version}_checksums.txt" "$version"
-      - name: Wrapper tests against the release binary
+      - name: Embedded digest matches the built binary
         run: |
           version="${GITHUB_REF_NAME#v}"
-          bin="dist/qorescan_${version}_linux_amd64"
+          want="$(python -c "import json,sys; print(json.load(open('npm/checksums.json'))['files']['qorescan_${version}_linux_amd64'])")"
+          got="$(sha256sum dist/qorescan_linux_amd64_v1/qorescan | cut -d' ' -f1)"
+          echo "checksums.json: $want, built: $got"
+          test "$want" = "$got"
+      - name: Wrapper tests against the release binary
+        run: |
+          bin="dist/qorescan_linux_amd64_v1/qorescan"
           chmod +x "$bin"
           export QORESCAN_TEST_BINARY="$PWD/$bin"
           (cd npm && npm test)
