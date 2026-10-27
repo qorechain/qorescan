@@ -19,6 +19,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"runtime"
 	"strings"
 	"testing"
 	"time"
@@ -127,12 +128,18 @@ func goldenScan(t *testing.T) []byte {
 }
 
 func TestGoldenCBOM(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("golden files use forward-slash paths; covered on Linux and macOS")
+	}
 	data := goldenScan(t)
 	validate(t, data)
 	golden(t, "scan.cbom.json", data)
 }
 
 func TestGoldenReportsAndTemplates(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("golden files use forward-slash paths; covered on Linux and macOS")
+	}
 	cbomPath := filepath.Join(t.TempDir(), "cbom.json")
 	if err := os.WriteFile(cbomPath, goldenScan(t), 0o644); err != nil {
 		t.Fatal(err)

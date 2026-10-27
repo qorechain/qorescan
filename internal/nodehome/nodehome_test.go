@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"runtime"
 	"strings"
 	"testing"
 
@@ -145,6 +146,9 @@ func TestScanFixtureHome(t *testing.T) {
 }
 
 func TestRemoteSignerAndPermissions(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("Unix file modes are not available on Windows")
+	}
 	_, inv, _ := scan(t, fixture.Options{RemoteSigner: true, KeyFileMode: 0o644})
 	notes := noteText(inv)
 	if !strings.Contains(notes, "remote signer at tcp://127.0.0.1:26659") {
