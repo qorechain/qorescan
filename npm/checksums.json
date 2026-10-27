@@ -1,4 +1,11 @@
 {
   "version": "0.1.0",
-  "files": {}
+  "files": {
+    "qorescan_0.1.0_darwin_amd64": "bade7d9a13b9b93c11e31cdaff7af099e6975daa33fee15e83c6b6e817e17c60",
+    "qorescan_0.1.0_darwin_arm64": "d5e489ecee358fe556f1eaefa8dc902c3c47c13b5c0b8faca8ecc42b97f4ce0e",
+    "qorescan_0.1.0_linux_amd64": "a47e585cbdf4a166e5fcfe5ffaea295f3f84f8db5f6d72bb0ca7a7b68cab8287",
+    "qorescan_0.1.0_linux_arm64": "ec07c983af5f8fe954772a9010315f269c87d40a7f23934d308e20a41a64948d",
+    "qorescan_0.1.0_windows_amd64.exe": "d1e6eba81401283fcecc87e93f4f88dcb763cad9ca8967e678291f15907cfa8b",
+    "qorescan_0.1.0_windows_arm64.exe": "a8125f9a7cacb60d347eb410b1bfc90ca1280bff470890897862bee09cff1759"
+  }
 }
