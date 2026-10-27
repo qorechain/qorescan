@@ -4,6 +4,7 @@ package solidity
 
 import (
 	"fmt"
+	"runtime"
 	"sort"
 	"strings"
 	"testing"
@@ -104,6 +105,9 @@ func TestIncludeDependencies(t *testing.T) {
 }
 
 func TestSingleFile(t *testing.T) {
+	if runtime.GOOS == "windows" {
+		t.Skip("fixture paths use forward slashes; covered on Linux and macOS")
+	}
 	inv := inventory.New("t")
 	res, err := Scan("testdata/project/contracts/Negative.sol", inv, Options{})
 	if err != nil || res.Files != 1 || !inv.Empty() {
