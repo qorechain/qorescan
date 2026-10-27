@@ -1,0 +1,27 @@
+# QoreScan Community
+
+> Read-only CLI that inventories the cryptography of a QoreChain deployment (node home, live network over REST, TLS endpoints, Solidity sources) and writes a CycloneDX 1.6 CBOM, plus Markdown reports mapped to FINMA Guidance 05/2026, the EU NIS Cooperation Group PQC roadmap and DORA RTS Article 6. An inventory aid, not a certification or legal opinion. Go, Apache-2.0.
+
+Never reads private key values: key files give only the key type and the public key.
+Networks: mainnet qorechain-vladi (REST https://api.qore.host), testnet qorechain-diana (REST https://api-testnet.qore.host).
+
+## Docs
+- [README](README.md): sources, install channels, examples
+- [Usage](docs/usage.md): every command and flag, npm/PyPI wrappers, GitHub Action, Docker
+- [What is scanned](docs/scanned-data.md): files, keys, REST routes, Solidity patterns; how private keys are kept out
+- [Frameworks](docs/frameworks.md): classification, NIST categories, NIST IR 8547 timeline, FINMA/NIS/DORA mapping and sources
+- [Limitations](docs/limitations.md)
+- [Design](docs/design.md): own CycloneDX 1.6 writer instead of CBOMkit plugins; licence check
+
+## Commands
+- qorescan scan --node-home DIR --network mainnet|testnet [--rest URL] [--address ADDR]... [--tls HOST:PORT]... [--solidity DIR]... --out cbom.json
+- qorescan tls HOST:PORT...
+- qorescan solidity DIR...
+- qorescan report --framework finma|nis|dora --cbom cbom.json
+- qorescan template agility|questionnaire --cbom cbom.json
+
+## CBOM conventions
+- components of type cryptographic-asset; bom-refs crypto/algorithm/<key>, crypto/protocol/..., crypto/certificate/<sha256 prefix>, crypto/key/...
+- evidence.occurrences: path relative to the scanned directory with line, or REST URL, or host:port
+- properties: qorescan:classification (post-quantum, hybrid, quantum-vulnerable, symmetric, unknown), qorescan:transition (NIST IR 8547), qorescan:standard, qorescan:source
+- metadata properties: qorescan:chain:*, qorescan:genesis:* facts, qorescan:note, qorescan:disclaimer
