@@ -1,0 +1,1408 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:00000000-0000-5000-8000-000000000000",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-27T12:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "supplier": {
+            "name": "QoreChain Association"
+          },
+          "name": "qorescan",
+          "version": "0.1.0-test",
+          "externalReferences": [
+            {
+              "type": "vcs",
+              "url": "https://github.com/qorechain/qorescan"
+            }
+          ]
+        }
+      ]
+    },
+    "component": {
+      "type": "platform",
+      "bom-ref": "target",
+      "name": "QoreChain fixture"
+    },
+    "properties": [
+      {
+        "name": "qorescan:disclaimer",
+        "value": "QoreScan output is an inventory aid. It is not a certification, an audit or a legal opinion, and it does not establish conformity with any regulation or standard."
+      },
+      {
+        "name": "qorescan:genesis:chain-id",
+        "value": "qorechain-fixture"
+      },
+      {
+        "name": "qorescan:genesis:validator-pub-key-type",
+        "value": "ed25519"
+      },
+      {
+        "name": "qorescan:genesis:pqc:hybrid-signature-mode",
+        "value": "required"
+      },
+      {
+        "name": "qorescan:genesis:pqc:pqc-primary",
+        "value": "true"
+      },
+      {
+        "name": "qorescan:genesis:pqc:allow-classical-fallback",
+        "value": "false"
+      },
+      {
+        "name": "qorescan:genesis:pqc:min-security-level",
+        "value": "5"
+      },
+      {
+        "name": "qorescan:genesis:pqc:default-migration-blocks",
+        "value": "1000000"
+      },
+      {
+        "name": "qorescan:genesis:pqc:default-signature-algorithm-id",
+        "value": "1"
+      },
+      {
+        "name": "qorescan:genesis:pqc:registry",
+        "value": "1 dilithium5 (signature, active, NIST level 5)"
+      },
+      {
+        "name": "qorescan:genesis:pqc:registry",
+        "value": "2 mlkem1024 (kem, active, NIST level 5)"
+      },
+      {
+        "name": "qorescan:genesis:pqc:accounts",
+        "value": "1 (hybrid 1)"
+      },
+      {
+        "name": "qorescan:genesis:protocol-feature",
+        "value": "pqc-sign-bytes-v2"
+      },
+      {
+        "name": "qorescan:genesis:protocol-feature",
+        "value": "evm-pqc-authorisation-window"
+      },
+      {
+        "name": "qorescan:genesis:protocol-features",
+        "value": "3 enabled at genesis (2 PQC-related listed)"
+      },
+      {
+        "name": "qorescan:chain:rest",
+        "value": "http://chain.test"
+      },
+      {
+        "name": "qorescan:chain:id",
+        "value": "qorechain-diana"
+      },
+      {
+        "name": "qorescan:chain:consensus-engine-version",
+        "value": "0.38.26"
+      },
+      {
+        "name": "qorescan:chain:app-version",
+        "value": "v0.0.0-fixture"
+      },
+      {
+        "name": "qorescan:chain:protocol-feature",
+        "value": "pqc-sign-bytes-v2"
+      },
+      {
+        "name": "qorescan:chain:protocol-feature",
+        "value": "evm-pqc-authorisation-window"
+      },
+      {
+        "name": "qorescan:chain:protocol-features",
+        "value": "3 enabled at height 123456 (2 PQC-related listed)"
+      },
+      {
+        "name": "qorescan:chain:pqc:hybrid-signature-mode",
+        "value": "required"
+      },
+      {
+        "name": "qorescan:chain:pqc:pqc-primary",
+        "value": "true"
+      },
+      {
+        "name": "qorescan:chain:pqc:allow-classical-fallback",
+        "value": "false"
+      },
+      {
+        "name": "qorescan:chain:pqc:min-security-level",
+        "value": "5"
+      },
+      {
+        "name": "qorescan:chain:pqc:default-migration-blocks",
+        "value": "1000000"
+      },
+      {
+        "name": "qorescan:chain:evm:active-precompile",
+        "value": "rlConsensusParams (0x0000000000000000000000000000000000000C01)"
+      },
+      {
+        "name": "qorescan:chain:evm:active-precompile",
+        "value": "pqcVerify (0x0000000000000000000000000000000000000a01)"
+      },
+      {
+        "name": "qorescan:chain:evm:active-precompile",
+        "value": "pqcKeyStatus (0x0000000000000000000000000000000000000a02)"
+      },
+      {
+        "name": "qorescan:chain:evm:active-precompile",
+        "value": "p256 (0x0000000000000000000000000000000000000100)"
+      },
+      {
+        "name": "qorescan:chain:account-pqc-status",
+        "value": "qor1fixtureaccount: hybrid key, dilithium5"
+      },
+      {
+        "name": "qorescan:solidity:files",
+        "value": "3"
+      },
+      {
+        "name": "qorescan:note",
+        "value": "[info] node-home: RPC listener tcp://0.0.0.0:26657 binds a non-loopback address without TLS configured on the node; if TLS is terminated by a proxy, scan that endpoint with `qorescan tls` (config/config.toml:14)"
+      },
+      {
+        "name": "qorescan:note",
+        "value": "[info] node-home: REST API listener tcp://0.0.0.0:1317 binds a non-loopback address without TLS configured on the node; if TLS is terminated by a proxy, scan that endpoint with `qorescan tls` (config/app.toml:5)"
+      },
+      {
+        "name": "qorescan:note",
+        "value": "[info] node-home: EVM JSON-RPC listener 0.0.0.0:8545 binds a non-loopback address without TLS configured on the node; if TLS is terminated by a proxy, scan that endpoint with `qorescan tls` (config/app.toml:13)"
+      },
+      {
+        "name": "qorescan:note",
+        "value": "[info] node-home: account keyring directory present (file backend); not opened (keyring-file)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/chacha20-poly1305",
+      "name": "ChaCha20-Poly1305",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/config.toml",
+            "line": 22,
+            "symbol": "p2p.laddr",
+            "additionalContext": "peer-to-peer listener tcp://0.0.0.0:26656; handshake defined by the consensus engine"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "classicalSecurityLevel": 256
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "symmetric"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not a NIST-standardised algorithm; not scheduled by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "RFC 8439"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ChaCha20-Poly1305"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ecdsa-p256",
+      "name": "ECDSA P-256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 36,
+            "symbol": "p256",
+            "additionalContext": "ECDSA P-256 verification (RIP-7212 precompile 0x100 or a P256 library)"
+          },
+          {
+            "location": "http://chain.test/cosmos/evm/vm/v1/params",
+            "symbol": "params.active_static_precompiles",
+            "additionalContext": "EVM precompile p256 (0x0000000000000000000000000000000000000100) is active: signature verification from contracts"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "secp256r1",
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "quantum-vulnerable"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Deprecated after 2030, disallowed after 2035 (NIST IR 8547)"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "FIPS 186-5"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ECDSA"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ecdsa-secp256k1",
+      "name": "ECDSA secp256k1",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/genesis.json",
+            "line": 31,
+            "symbol": "app_state.pqc.params.hybrid_signature_mode",
+            "additionalContext": "classical half of the native-lane hybrid signature"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 4,
+            "symbol": "import",
+            "additionalContext": "imports @openzeppelin/contracts/utils/cryptography/ECDSA.sol"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 9,
+            "symbol": "using ECDSA",
+            "additionalContext": "ECDSA library attached to a type"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 14,
+            "symbol": "ecrecover",
+            "additionalContext": "ecrecover: ECDSA secp256k1 public key recovery (precompile 0x01)"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 18,
+            "symbol": "ECDSA.recover",
+            "additionalContext": "ECDSA library recovery"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 31,
+            "symbol": "precompile 0x01",
+            "additionalContext": "direct call to the ecrecover precompile (0x01)"
+          },
+          {
+            "location": "http://chain.test/cosmos/evm/vm/v1/params",
+            "symbol": "evm",
+            "additionalContext": "EVM lane: transactions signed with ECDSA secp256k1 over Keccak-256; ecrecover (0x01), sha256 (0x02) and ripemd160 (0x03) precompiles"
+          },
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/account/qor1fixtureaccount",
+            "symbol": "account.ecdsa_pubkey",
+            "additionalContext": "classical key of qor1fixtureaccount"
+          },
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/params",
+            "symbol": "params.hybrid_signature_mode",
+            "additionalContext": "classical half of the native-lane hybrid signature"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "secp256k1",
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "quantum-vulnerable"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Deprecated after 2030, disallowed after 2035 (NIST IR 8547)"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "SEC 2 curve, ECDSA per FIPS 186-5"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ECDSA"
+        },
+        {
+          "name": "qorescan:algorithm-note",
+          "value": "IR 8547 schedules the ECDSA family; QoreScan applies that schedule to every curve in the family."
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ed25519",
+      "name": "Ed25519",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/config.toml",
+            "line": 8,
+            "symbol": "priv_validator_key_file",
+            "additionalContext": "validator key file location"
+          },
+          {
+            "location": "config/config.toml",
+            "line": 11,
+            "symbol": "node_key_file",
+            "additionalContext": "node key file location"
+          },
+          {
+            "location": "config/config.toml",
+            "line": 22,
+            "symbol": "p2p.laddr",
+            "additionalContext": "peer-to-peer listener tcp://0.0.0.0:26656; handshake defined by the consensus engine"
+          },
+          {
+            "location": "config/genesis.json",
+            "line": 15,
+            "symbol": "app_state.genutil.gen_txs[].body.messages[].pubkey",
+            "additionalContext": "1 genesis validator consensus keys of type /cosmos.crypto.ed25519.PubKey"
+          },
+          {
+            "location": "config/genesis.json",
+            "line": 71,
+            "symbol": "consensus.params.validator.pub_key_types",
+            "additionalContext": "consensus key type allowed for validators: ed25519"
+          },
+          {
+            "location": "config/node_key.json",
+            "symbol": "priv_key.type",
+            "additionalContext": "node identity key type engine/PrivKeyEd25519; only the type name was read"
+          },
+          {
+            "location": "config/priv_validator_key.json",
+            "symbol": "pub_key.type",
+            "additionalContext": "validator consensus key type engine/PubKeyEd25519"
+          },
+          {
+            "location": "http://chain.test/cosmos/base/tendermint/v1beta1/validatorsets/latest?pagination.limit=1000",
+            "symbol": "validators[].pub_key",
+            "additionalContext": "3 active validators with /cosmos.crypto.ed25519.PubKey consensus keys at height 123456"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "curve": "Ed25519",
+          "cryptoFunctions": [
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.101.112"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "quantum-vulnerable"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Deprecated after 2030, disallowed after 2035 (NIST IR 8547)"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "FIPS 186-5"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "EdDSA"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/hkdf-sha256",
+      "name": "HKDF-SHA256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/config.toml",
+            "line": 22,
+            "symbol": "p2p.laddr",
+            "additionalContext": "peer-to-peer listener tcp://0.0.0.0:26656; handshake defined by the consensus engine"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "keyderive"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "symmetric"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not scheduled for deprecation by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "RFC 5869, SP 800-56C"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "HKDF"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/keccak-256",
+      "name": "Keccak-256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 5,
+            "symbol": "import",
+            "additionalContext": "imports @openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 40,
+            "symbol": "keccak256",
+            "additionalContext": "Keccak-256 hash"
+          },
+          {
+            "location": "http://chain.test/cosmos/evm/vm/v1/params",
+            "symbol": "evm",
+            "additionalContext": "EVM lane: transactions signed with ECDSA secp256k1 over Keccak-256; ecrecover (0x01), sha256 (0x02) and ripemd160 (0x03) precompiles"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "symmetric"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not a NIST-standardised algorithm; not scheduled by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "Keccak submission padding (as used by Ethereum), not FIPS 202"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "Keccak"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ml-dsa-87",
+      "name": "ML-DSA-87",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/genesis.json",
+            "line": 31,
+            "symbol": "app_state.pqc.params.hybrid_signature_mode",
+            "additionalContext": "native-lane transactions: hybrid signature mode required"
+          },
+          {
+            "location": "config/genesis.json",
+            "line": 40,
+            "symbol": "app_state.pqc.algorithms[0]",
+            "additionalContext": "on-chain algorithm registry: id 1, name \"dilithium5\", active"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 6,
+            "symbol": "import",
+            "additionalContext": "imports ./IQorePQC.sol"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 11,
+            "symbol": "pqcVerify",
+            "additionalContext": "QoreChain pqcVerify precompile (0x0A01): ML-DSA-87 signature verification"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 22,
+            "symbol": "pqcVerify",
+            "additionalContext": "QoreChain pqcVerify precompile (0x0A01): ML-DSA-87 signature verification"
+          },
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 26,
+            "symbol": "pqcVerify",
+            "additionalContext": "QoreChain pqcVerify precompile (0x0A01): ML-DSA-87 signature verification"
+          },
+          {
+            "location": "http://chain.test/cosmos/evm/vm/v1/params",
+            "symbol": "params.active_static_precompiles",
+            "additionalContext": "EVM precompile pqcVerify (0x0000000000000000000000000000000000000a01) is active: signature verification from contracts"
+          },
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/account/qor1fixtureaccount",
+            "symbol": "account",
+            "additionalContext": "PQC key of qor1fixtureaccount: dilithium5, key type hybrid, registered at height 100"
+          },
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/params",
+            "symbol": "params.default_signature_algo_name",
+            "additionalContext": "default signature algorithm for new keys: id 1, \"dilithium5\"; hybrid signature mode required"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "87",
+          "cryptoFunctions": [
+            "keygen",
+            "sign",
+            "verify"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "2.16.840.1.101.3.4.3.19"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "post-quantum"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not scheduled for deprecation by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "FIPS 204"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ML-DSA"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        },
+        {
+          "name": "qorescan:pqc:registry-id",
+          "value": "1"
+        },
+        {
+          "name": "qorescan:pqc:registry-name",
+          "value": "dilithium5"
+        },
+        {
+          "name": "qorescan:pqc:registry-status",
+          "value": "active"
+        },
+        {
+          "name": "qorescan:pqc:default-signature-algorithm",
+          "value": "true"
+        },
+        {
+          "name": "qorescan:pqc:hybrid-signature-mode",
+          "value": "required"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ml-kem-1024",
+      "name": "ML-KEM-1024",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/genesis.json",
+            "line": 51,
+            "symbol": "app_state.pqc.algorithms[1]",
+            "additionalContext": "on-chain algorithm registry: id 2, name \"mlkem1024\", active"
+          },
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/kem/qor1fixtureaccount",
+            "symbol": "key",
+            "additionalContext": "KEM public key published by qor1fixtureaccount"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "parameterSetIdentifier": "1024",
+          "cryptoFunctions": [
+            "keygen",
+            "encapsulate",
+            "decapsulate"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 5
+        },
+        "oid": "2.16.840.1.101.3.4.4.3"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "post-quantum"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not scheduled for deprecation by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "FIPS 203"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ML-KEM"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        },
+        {
+          "name": "qorescan:pqc:registry-id",
+          "value": "2"
+        },
+        {
+          "name": "qorescan:pqc:registry-name",
+          "value": "mlkem1024"
+        },
+        {
+          "name": "qorescan:pqc:registry-status",
+          "value": "active"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/ripemd-160",
+      "name": "RIPEMD-160",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 40,
+            "symbol": "ripemd160",
+            "additionalContext": "RIPEMD-160 (precompile 0x03)"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "160",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 80
+        },
+        "oid": "1.3.36.3.2.1"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "symmetric"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not a NIST-standardised algorithm; not scheduled by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "ISO/IEC 10118-3"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "RIPEMD"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/sha-256",
+      "name": "SHA-256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 40,
+            "symbol": "sha256",
+            "additionalContext": "SHA-256 (precompile 0x02)"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 2
+        },
+        "oid": "2.16.840.1.101.3.4.2.1"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "symmetric"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Not scheduled for deprecation by NIST IR 8547"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "FIPS 180-4"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "SHA-2"
+        },
+        {
+          "name": "qorescan:source",
+          "value": "solidity"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/algorithm/x25519",
+      "name": "X25519",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/config.toml",
+            "line": 22,
+            "symbol": "p2p.laddr",
+            "additionalContext": "peer-to-peer listener tcp://0.0.0.0:26656; handshake defined by the consensus engine"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "curve": "Curve25519",
+          "cryptoFunctions": [
+            "keygen",
+            "keyderive"
+          ],
+          "classicalSecurityLevel": 128,
+          "nistQuantumSecurityLevel": 0
+        },
+        "oid": "1.3.101.110"
+      },
+      "properties": [
+        {
+          "name": "qorescan:classification",
+          "value": "quantum-vulnerable"
+        },
+        {
+          "name": "qorescan:transition",
+          "value": "Deprecated after 2030, disallowed after 2035 (NIST IR 8547)"
+        },
+        {
+          "name": "qorescan:standard",
+          "value": "RFC 7748"
+        },
+        {
+          "name": "qorescan:family",
+          "value": "ECDH"
+        },
+        {
+          "name": "qorescan:algorithm-note",
+          "value": "IR 8547 schedules elliptic-curve DH; X25519 is not in SP 800-56A but has the same quantum exposure."
+        },
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/protocol/p2p-secret-connection",
+      "name": "Consensus engine P2P secret connection",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/config.toml",
+            "line": 22,
+            "symbol": "p2p.laddr",
+            "additionalContext": "peer-to-peer listener tcp://0.0.0.0:26656; handshake defined by the consensus engine"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "other",
+          "cryptoRefArray": [
+            "crypto/algorithm/x25519",
+            "crypto/algorithm/ed25519",
+            "crypto/algorithm/hkdf-sha256",
+            "crypto/algorithm/chacha20-poly1305"
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        },
+        {
+          "name": "qorescan:protocol:handshake",
+          "value": "station-to-station: ephemeral X25519, Ed25519 node key signature over a Merlin transcript"
+        },
+        {
+          "name": "qorescan:protocol:configurable",
+          "value": "no"
+        },
+        {
+          "name": "qorescan:protocol:key-exchange",
+          "value": "X25519"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/account-classical/qor1fixtureaccount",
+      "name": "Account classical public key qor1fixtureaccount",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/account/qor1fixtureaccount",
+            "symbol": "account.ecdsa_pubkey",
+            "additionalContext": "source: stored"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "qor1fixtureaccount",
+          "algorithmRef": "crypto/algorithm/ecdsa-secp256k1",
+          "size": 264,
+          "format": "SEC 1"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/account-kem/qor1fixtureaccount",
+      "name": "Account KEM public key qor1fixtureaccount",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/kem/qor1fixtureaccount",
+            "symbol": "key",
+            "additionalContext": "KEM public key published by qor1fixtureaccount"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "qor1fixtureaccount",
+          "algorithmRef": "crypto/algorithm/ml-kem-1024",
+          "size": 12544,
+          "format": "raw"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/account-pqc/qor1fixtureaccount",
+      "name": "Account PQC public key qor1fixtureaccount",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "http://chain.test/qorechain/pqc/v1/account/qor1fixtureaccount",
+            "symbol": "account",
+            "additionalContext": "PQC key of qor1fixtureaccount: dilithium5, key type hybrid, registered at height 100"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "qor1fixtureaccount",
+          "algorithmRef": "crypto/algorithm/ml-dsa-87",
+          "size": 20736,
+          "format": "raw"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:pqc:key-type",
+          "value": "hybrid"
+        },
+        {
+          "name": "qorescan:pqc:registry-id",
+          "value": "1"
+        },
+        {
+          "name": "qorescan:pqc:classical-key-source",
+          "value": "stored"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/active-validators/ed25519",
+      "name": "Active validator consensus public keys (Ed25519)",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "http://chain.test/cosmos/base/tendermint/v1beta1/validatorsets/latest?pagination.limit=1000",
+            "symbol": "validators[].pub_key",
+            "additionalContext": "3 active validators with /cosmos.crypto.ed25519.PubKey consensus keys at height 123456"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "crypto/algorithm/ed25519"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "chain"
+        },
+        {
+          "name": "qorescan:count",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/genesis-validators/ed25519",
+      "name": "Genesis validator consensus public keys (Ed25519)",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/genesis.json",
+            "line": 15,
+            "symbol": "app_state.genutil.gen_txs[].body.messages[].pubkey",
+            "additionalContext": "1 genesis validator consensus keys of type /cosmos.crypto.ed25519.PubKey"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "crypto/algorithm/ed25519"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        },
+        {
+          "name": "qorescan:count",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/node-identity",
+      "name": "Node identity private key (file)",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/node_key.json",
+            "symbol": "priv_key.type",
+            "additionalContext": "node identity key type engine/PrivKeyEd25519; only the type name was read"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "algorithmRef": "crypto/algorithm/ed25519",
+          "format": "plaintext JSON file"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/validator-consensus-private/88608065a8203ba15cea78c51e068a143c47dc24",
+      "name": "Validator consensus private key (file)",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/priv_validator_key.json",
+            "symbol": "priv_key.type",
+            "additionalContext": "only the key type name was read"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "id": "88608065A8203BA15CEA78C51E068A143C47DC24",
+          "algorithmRef": "crypto/algorithm/ed25519",
+          "format": "plaintext JSON file"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "crypto/key/validator-consensus/88608065a8203ba15cea78c51e068a143c47dc24",
+      "name": "Validator consensus public key",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/priv_validator_key.json",
+            "symbol": "pub_key",
+            "additionalContext": "public key and address read; the private key value was not decoded"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "id": "88608065A8203BA15CEA78C51E068A143C47DC24",
+          "algorithmRef": "crypto/algorithm/ed25519",
+          "size": 256,
+          "format": "base64 in JSON"
+        }
+      },
+      "properties": [
+        {
+          "name": "qorescan:source",
+          "value": "node-home"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "lib/openzeppelin/ECDSA",
+      "group": "@openzeppelin/contracts",
+      "name": "ECDSA",
+      "purl": "pkg:npm/%40openzeppelin/contracts",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 4,
+            "symbol": "import",
+            "additionalContext": "imports @openzeppelin/contracts/utils/cryptography/ECDSA.sol"
+          }
+        ]
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "lib/openzeppelin/MessageHashUtils-EIP712",
+      "group": "@openzeppelin/contracts",
+      "name": "MessageHashUtils / EIP712",
+      "purl": "pkg:npm/%40openzeppelin/contracts",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 5,
+            "symbol": "import",
+            "additionalContext": "imports @openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol"
+          }
+        ]
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "lib/qorechain/IQorePQC",
+      "group": "qorechain",
+      "name": "IQorePQC",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "contracts/Verifier.sol",
+            "line": 6,
+            "symbol": "import",
+            "additionalContext": "imports ./IQorePQC.sol"
+          }
+        ]
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "target",
+      "dependsOn": [
+        "crypto/algorithm/chacha20-poly1305",
+        "crypto/algorithm/ecdsa-p256",
+        "crypto/algorithm/ecdsa-secp256k1",
+        "crypto/algorithm/ed25519",
+        "crypto/algorithm/hkdf-sha256",
+        "crypto/algorithm/keccak-256",
+        "crypto/algorithm/ml-dsa-87",
+        "crypto/algorithm/ml-kem-1024",
+        "crypto/algorithm/ripemd-160",
+        "crypto/algorithm/sha-256",
+        "crypto/algorithm/x25519",
+        "crypto/protocol/p2p-secret-connection",
+        "crypto/key/account-classical/qor1fixtureaccount",
+        "crypto/key/account-kem/qor1fixtureaccount",
+        "crypto/key/account-pqc/qor1fixtureaccount",
+        "crypto/key/active-validators/ed25519",
+        "crypto/key/genesis-validators/ed25519",
+        "crypto/key/node-identity",
+        "crypto/key/validator-consensus-private/88608065a8203ba15cea78c51e068a143c47dc24",
+        "crypto/key/validator-consensus/88608065a8203ba15cea78c51e068a143c47dc24",
+        "lib/openzeppelin/ECDSA",
+        "lib/openzeppelin/MessageHashUtils-EIP712",
+        "lib/qorechain/IQorePQC"
+      ]
+    },
+    {
+      "ref": "crypto/protocol/p2p-secret-connection",
+      "dependsOn": [
+        "crypto/algorithm/x25519",
+        "crypto/algorithm/ed25519",
+        "crypto/algorithm/hkdf-sha256",
+        "crypto/algorithm/chacha20-poly1305"
+      ]
+    },
+    {
+      "ref": "crypto/key/account-classical/qor1fixtureaccount",
+      "dependsOn": [
+        "crypto/algorithm/ecdsa-secp256k1"
+      ]
+    },
+    {
+      "ref": "crypto/key/account-kem/qor1fixtureaccount",
+      "dependsOn": [
+        "crypto/algorithm/ml-kem-1024"
+      ]
+    },
+    {
+      "ref": "crypto/key/account-pqc/qor1fixtureaccount",
+      "dependsOn": [
+        "crypto/algorithm/ml-dsa-87"
+      ]
+    },
+    {
+      "ref": "crypto/key/active-validators/ed25519",
+      "dependsOn": [
+        "crypto/algorithm/ed25519"
+      ]
+    },
+    {
+      "ref": "crypto/key/genesis-validators/ed25519",
+      "dependsOn": [
+        "crypto/algorithm/ed25519"
+      ]
+    },
+    {
+      "ref": "crypto/key/node-identity",
+      "dependsOn": [
+        "crypto/algorithm/ed25519"
+      ]
+    },
+    {
+      "ref": "crypto/key/validator-consensus-private/88608065a8203ba15cea78c51e068a143c47dc24",
+      "dependsOn": [
+        "crypto/algorithm/ed25519"
+      ]
+    },
+    {
+      "ref": "crypto/key/validator-consensus/88608065a8203ba15cea78c51e068a143c47dc24",
+      "dependsOn": [
+        "crypto/algorithm/ed25519"
+      ]
+    },
+    {
+      "ref": "lib/openzeppelin/ECDSA",
+      "provides": [
+        "crypto/algorithm/ecdsa-secp256k1"
+      ]
+    },
+    {
+      "ref": "lib/openzeppelin/MessageHashUtils-EIP712",
+      "provides": [
+        "crypto/algorithm/keccak-256"
+      ]
+    },
+    {
+      "ref": "lib/qorechain/IQorePQC",
+      "provides": [
+        "crypto/algorithm/ml-dsa-87"
+      ]
+    }
+  ]
+}

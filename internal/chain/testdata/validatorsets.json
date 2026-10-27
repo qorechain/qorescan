@@ -1,0 +1,36 @@
+{
+  "block_height": "123456",
+  "validators": [
+    {
+      "address": "qorvalcons1fixture0",
+      "pub_key": {
+        "@type": "/cosmos.crypto.ed25519.PubKey",
+        "key": "qIwyuSNsyVRCuJUWhBd5kFJQW84rmO9iJCkZpzhUSHQ="
+      },
+      "voting_power": "100",
+      "proposer_priority": "0"
+    },
+    {
+      "address": "qorvalcons1fixture1",
+      "pub_key": {
+        "@type": "/cosmos.crypto.ed25519.PubKey",
+        "key": "G6LmtUPQpXjJvSHze1b1UbZjdduJDQkFOBqNZ5bGHe0="
+      },
+      "voting_power": "100",
+      "proposer_priority": "0"
+    },
+    {
+      "address": "qorvalcons1fixture2",
+      "pub_key": {
+        "@type": "/cosmos.crypto.ed25519.PubKey",
+        "key": "kNA4JP8mkD2fUylOHjoXpyc53mJFiLWSR5by741JWv0="
+      },
+      "voting_power": "100",
+      "proposer_priority": "0"
+    }
+  ],
+  "pagination": {
+    "next_key": null,
+    "total": "3"
+  }
+}

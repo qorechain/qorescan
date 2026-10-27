@@ -1,0 +1,12 @@
+{
+  "params": {
+    "pqc_primary": true,
+    "allow_classical_fallback": false,
+    "min_security_level": 5,
+    "default_migration_blocks": "1000000",
+    "default_signature_algo": 1,
+    "default_signature_algo_name": "dilithium5",
+    "hybrid_signature_mode": 2,
+    "hybrid_signature_mode_name": "required"
+  }
+}

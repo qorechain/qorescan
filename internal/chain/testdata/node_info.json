@@ -1,0 +1,19 @@
+{
+  "default_node_info": {
+    "protocol_version": {
+      "p2p": "8",
+      "block": "11",
+      "app": "0"
+    },
+    "default_node_id": "0000000000000000000000000000000000000000",
+    "listen_addr": "tcp://0.0.0.0:26656",
+    "network": "qorechain-diana",
+    "version": "0.38.26",
+    "moniker": "fixture"
+  },
+  "application_version": {
+    "name": "qorechain",
+    "app_name": "qorechaind",
+    "version": "v0.0.0-fixture"
+  }
+}

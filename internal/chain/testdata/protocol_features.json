@@ -1,0 +1,29 @@
+{
+  "features": [
+    {
+      "name": "pqc-sign-bytes-v2",
+      "enabled": true,
+      "known": true,
+      "staged": false
+    },
+    {
+      "name": "evm-pqc-authorisation-window",
+      "enabled": true,
+      "known": true,
+      "staged": false
+    },
+    {
+      "name": "amm-swap-integrity",
+      "enabled": true,
+      "known": true,
+      "staged": false
+    },
+    {
+      "name": "pqc-future-switch",
+      "enabled": false,
+      "known": true,
+      "staged": true
+    }
+  ],
+  "height": "123456"
+}
