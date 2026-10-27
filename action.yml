@@ -1,0 +1,93 @@
+# SPDX-License-Identifier: Apache-2.0
+name: QoreScan Community
+description: Inventory the cryptography of a QoreChain deployment and write a CycloneDX 1.6 CBOM (an inventory aid, not a certification).
+author: QoreChain Association
+branding:
+  icon: list
+  color: blue
+
+inputs:
+  node-home:
+    description: Node home directory to scan (contains config/). Key files are read for key types and public keys only.
+    required: false
+    default: ""
+  network:
+    description: Read live state from "mainnet" or "testnet".
+    required: false
+    default: ""
+  rest:
+    description: REST base URL instead of a named network.
+    required: false
+    default: ""
+  addresses:
+    description: Accounts whose PQC key status is read, separated by spaces or new lines.
+    required: false
+    default: ""
+  tls:
+    description: TLS endpoints (HOST:PORT) to handshake with, separated by spaces or new lines.
+    required: false
+    default: ""
+  solidity:
+    description: Directories or .sol files to scan, separated by spaces or new lines.
+    required: false
+    default: ""
+  out:
+    description: Path of the CBOM to write.
+    required: false
+    default: qorescan.cbom.json
+  framework:
+    description: Also write a Markdown report for "finma", "nis" or "dora".
+    required: false
+    default: ""
+
+outputs:
+  cbom:
+    description: Path of the CBOM.
+    value: ${{ steps.scan.outputs.cbom }}
+  report:
+    description: Path of the report, when a framework was given.
+    value: ${{ steps.scan.outputs.report }}
+
+runs:
+  using: composite
+  steps:
+    # qorescan is built from the action's own source at the ref the workflow
+    # pinned, so no binary is downloaded.
+    - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+      with:
+        go-version-file: ${{ github.action_path }}/go.mod
+        cache: false
+    - name: Build qorescan
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      env:
+        GOFLAGS: -mod=readonly
+      run: CGO_ENABLED=0 go build -trimpath -ldflags "-X main.version=action-${GITHUB_ACTION_REF:-local}" -o "$RUNNER_TEMP/qorescan" ./cmd/qorescan
+    - name: Scan
+      id: scan
+      shell: bash
+      env:
+        IN_NODE_HOME: ${{ inputs.node-home }}
+        IN_NETWORK: ${{ inputs.network }}
+        IN_REST: ${{ inputs.rest }}
+        IN_ADDRESSES: ${{ inputs.addresses }}
+        IN_TLS: ${{ inputs.tls }}
+        IN_SOLIDITY: ${{ inputs.solidity }}
+        IN_OUT: ${{ inputs.out }}
+        IN_FRAMEWORK: ${{ inputs.framework }}
+      run: |
+        set -euo pipefail
+        args=(scan --out "$IN_OUT")
+        [ -n "$IN_NODE_HOME" ] && args+=(--node-home "$IN_NODE_HOME")
+        [ -n "$IN_NETWORK" ] && args+=(--network "$IN_NETWORK")
+        [ -n "$IN_REST" ] && args+=(--rest "$IN_REST")
+        for a in $IN_ADDRESSES; do args+=(--address "$a"); done
+        for t in $IN_TLS; do args+=(--tls "$t"); done
+        for s in $IN_SOLIDITY; do args+=(--solidity "$s"); done
+        "$RUNNER_TEMP/qorescan" "${args[@]}"
+        echo "cbom=$IN_OUT" >> "$GITHUB_OUTPUT"
+        if [ -n "$IN_FRAMEWORK" ]; then
+          report="${IN_OUT%.json}.$IN_FRAMEWORK.md"
+          "$RUNNER_TEMP/qorescan" report --framework "$IN_FRAMEWORK" --cbom "$IN_OUT" --out "$report"
+          echo "report=$report" >> "$GITHUB_OUTPUT"
+        fi

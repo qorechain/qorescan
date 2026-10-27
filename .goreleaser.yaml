@@ -1,0 +1,59 @@
+# SPDX-License-Identifier: Apache-2.0
+# GoReleaser configuration for the qorescan CLI. Release archives for people,
+# raw binaries for the npm and PyPI wrappers, one SHA-256 checksum file.
+version: 2
+project_name: qorescan
+
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - id: qorescan
+    main: ./cmd/qorescan
+    binary: qorescan
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    goos: [linux, darwin, windows]
+    goarch: [amd64, arm64]
+
+archives:
+  - id: archives
+    ids: [qorescan]
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - NOTICE
+      - README.md
+      - CHANGELOG.md
+  # Raw binaries, downloaded and verified by the npm and PyPI wrappers.
+  - id: binaries
+    ids: [qorescan]
+    formats: [binary]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "{{ .ProjectName }}_{{ .Version }}_checksums.txt"
+  algorithm: sha256
+
+snapshot:
+  version_template: "{{ .Version }}-snapshot"
+
+changelog:
+  disable: true
+
+release:
+  github:
+    owner: qorechain
+    name: qorescan
+  draft: true
+  footer: "See CHANGELOG.md. Verify downloads against qorescan_{{ .Version }}_checksums.txt."

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qorescan"
+version = "0.1.0"
+description = "QoreScan Community: cryptographic inventory (CycloneDX 1.6 CBOM) of a QoreChain deployment. Downloads the matching qorescan release binary and verifies its SHA-256 before running it."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "QoreChain Association" }]
+keywords = ["qorechain", "cbom", "cyclonedx", "cryptography", "inventory", "post-quantum"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Security :: Cryptography",
+]
+
+[project.urls]
+Homepage = "https://github.com/qorechain/qorescan"
+Issues = "https://github.com/qorechain/qorescan/issues"
+
+[project.scripts]
+qorescan = "qorescan:main"
+
+[tool.setuptools]
+packages = ["qorescan"]
+
+[tool.setuptools.package-data]
+qorescan = ["checksums.json"]
