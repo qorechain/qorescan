@@ -16,3 +16,5 @@ npm/LICENSE
 npm/NOTICE
 /qorescan
 /qorescan.exe
+
+!internal/solidity/testdata/project/node_modules/
