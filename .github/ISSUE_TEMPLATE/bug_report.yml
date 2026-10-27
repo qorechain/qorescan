@@ -1,0 +1,39 @@
+# SPDX-License-Identifier: Apache-2.0
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not report security vulnerabilities here; see SECURITY.md. Never attach key files, a keyring or a full node home."
+  - type: dropdown
+    id: channel
+    attributes:
+      label: How you run qorescan
+      options: [Release binary, go install, npm, PyPI, Docker, GitHub Action]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version (qorescan version)
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Node home, Network (REST), TLS, Solidity, CBOM output, Reports and templates, Wrappers]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Command line and a minimal input. Remove addresses or hosts you do not want to share.

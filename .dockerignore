@@ -1,0 +1,5 @@
+.git
+dist
+npm/node_modules
+python
+**/__pycache__
