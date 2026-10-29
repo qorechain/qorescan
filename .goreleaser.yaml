@@ -51,9 +51,7 @@ snapshot:
 changelog:
   disable: true
 
+# The GitHub release is created by hand by the maintainer; the release
+# workflow only attaches these files to it.
 release:
-  github:
-    owner: qorechain
-    name: qorescan
-  draft: true
-  footer: "See CHANGELOG.md. Verify downloads against qorescan_{{ .Version }}_checksums.txt."
+  disable: true

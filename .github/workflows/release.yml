@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Runs on a pushed tag v<version>. GoReleaser builds the binaries, archives
-# and checksum file and creates a draft GitHub release. The npm and PyPI
+# and checksum file, and the job attaches them to the GitHub release, which the
+# maintainer creates by hand before pushing the tag (the workflow never
+# creates a release). The npm and PyPI
 # wrapper packages are then built with the release's SHA-256 digests embedded
 # and attached to the workflow run. Each registry is published only when its
 # secret is set and after the GitHub release has been published by hand.
@@ -33,6 +35,12 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Attach to the GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view "$GITHUB_REF_NAME" > /dev/null || { echo "Create the GitHub release $GITHUB_REF_NAME by hand first, then re-run this job."; exit 1; }
+          find dist -maxdepth 1 -type f -name 'qorescan_*' -print0 | xargs -0 gh release upload "$GITHUB_REF_NAME" --clobber
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: dist
